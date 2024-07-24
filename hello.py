@@ -1,10 +1,10 @@
 import streamlit as st
-from fbprophet import Prophet
+from prophet import Prophet
 import pandas as pd
 
 st.header("Test")
 
-# Example usage of fbprophet
+# Example usage of prophet
 df = pd.DataFrame({
     'ds': pd.date_range(start='2020-01-01', periods=30),
     'y': range(30)
