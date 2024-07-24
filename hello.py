@@ -1,2 +1,8 @@
 import streamlit as st
-st.write("hello world")
+from prophet import Prophet
+import pandas as pd
+
+st.header("test")
+data = pd.read_csv("ZOMATO.NS.csv")
+model = Prophet()
+model.fit(data)
