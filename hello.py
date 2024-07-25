@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from prophet import Prophet
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 # Initialize session state
@@ -113,16 +112,9 @@ elif st.session_state['page'] == 'mum':
             showgraph()
         
         def showgrph():
-            forecast_clean = forecast.replace([np.inf, -np.inf], np.nan).dropna()
 
-            # Ensure forecast data is not empty after cleaning
-            if forecast_clean.empty:
-                st.error("Forecast data is empty after cleaning. Please check your data.")
-                return
-
-            fig, ax = plt.subplots()
-            ax.plot(forecast_clean['ds'], forecast_clean['yhat'], label='Forecast')
-            ax.fill_between(forecast_clean['ds'], forecast_clean['yhat_lower'], forecast_clean['yhat_upper'], alpha=0.2)
+            fig, ax = plt.model(forecast)
+            ax.plot(forecast)
             ax.set_xlabel('Date')
             ax.set_ylabel('Forecast')
             ax.legend()
