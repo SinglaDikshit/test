@@ -110,11 +110,13 @@ elif st.session_state['page'] == 'mum':
 
         if st.button('Show graph of dataset')== True:
             showgraph()
+
+        dates = pd.date_range(start='2024-01-01', periods=100)
+        forecast = [i * 0.5 for i in range(100)]      
         
         def showgrph():
-
             fig, ax = plot.subplots()
-            ax.plot(forecast)
+            ax.plot(date,forecast)
             ax.set_xlabel('Date')
             ax.set_ylabel('Forecast')
             ax.legend()
