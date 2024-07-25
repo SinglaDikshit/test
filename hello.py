@@ -116,13 +116,12 @@ elif st.session_state['page'] == 'mum':
         
         def showgrph():
             fig, ax = plt.subplots()
-            ax.plot(date,forecast)
+            ax.plot(dates,forecast)
             ax.set_xlabel('Date')
             ax.set_ylabel('Forecast')
             ax.legend()
             st.pyplot(fig)
-            return
-
+            
         
         if st.button('Show graph of forecast')==True:
             showgrph()
