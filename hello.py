@@ -38,7 +38,7 @@ if st.session_state['page'] == 'home':
     
 # Page: Main
 elif st.session_state['page'] == 'mum':
-    st.balloons()
+    
     st.title('Get an idea of the future stock price of the following company')
     st.write('Click on the company name')
     
@@ -112,7 +112,8 @@ elif st.session_state['page'] == 'mum':
             showgraph()
         
         def showgrph():
-            fig= model.plot(forecast)
+            fig,ax= model.plot(forecast)
+            ax.plot(forecast)
             st.pyplot(fig)
         if st.button('Show graph of forecast')==True:
             showgrph()
