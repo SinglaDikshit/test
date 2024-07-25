@@ -113,7 +113,7 @@ elif st.session_state['page'] == 'mum':
         
         def showgrph():
 
-            fig, ax = plot(forecast)
+            fig, ax = plot.subplots()
             ax.plot(forecast)
             ax.set_xlabel('Date')
             ax.set_ylabel('Forecast')
