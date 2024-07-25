@@ -117,7 +117,7 @@ elif st.session_state['page'] == 'mum':
             st.pyplot(fig)
         
         if st.button('Show graph of forecast')==True:
-            return showgrph()
+            showgrph()
 
 
     elif st.session_state['company'] == 'ford':
