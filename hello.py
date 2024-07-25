@@ -111,6 +111,12 @@ elif st.session_state['page'] == 'mum':
         if st.button('Show graph of dataset')== True:
             showgraph()
         
+        def showgrph():
+            fig= model.plot(forecast)
+            st.pyplot(fig)
+        if st.button('Show graph of forecast')==True:
+            showgrph()
+
 
     elif st.session_state['company'] == 'ford':
         st.title('FORD MOTORS')
