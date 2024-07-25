@@ -116,7 +116,7 @@ elif st.session_state['page'] == 'mum':
         
         def showgrph():
             fig, ax = plt.subplots()
-            ax.plot(forecast)
+            ax.plot(forecast['ds'],forecasr)
             ax.set_xlabel('Date')
             ax.set_ylabel('Forecast')
             plt.xticks(rotation=45)
