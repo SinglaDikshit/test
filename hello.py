@@ -119,6 +119,7 @@ elif st.session_state['page'] == 'mum':
             ax.set_ylabel('Forecast')
             ax.legend()
             st.pyplot(fig)
+            return
 
         
         if st.button('Show graph of forecast')==True:
