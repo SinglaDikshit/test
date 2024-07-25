@@ -190,6 +190,20 @@ elif st.session_state['page'] == 'mum':
 
         if st.button('Show graph of dataset')== True:
             showgraph()
+        
+        def showgrph():
+            fig, ax = plt.subplots()
+            ax.plot(forecast['ds'],forecast['yhat'])
+            
+            ax.set_xlabel('Date')
+            ax.set_ylabel('Forecast')
+            plt.xticks(rotation=45)
+            ax.legend()
+            st.pyplot(fig)
+            
+        
+        if st.button('Show graph of forecast')==True:
+            showgrph()
 
     else:
         st.title('NVIDIA')
@@ -244,6 +258,18 @@ elif st.session_state['page'] == 'mum':
 
         if st.button('Show graph of dataset')==True:
             showgraph()
-
+        def showgrph():
+            fig, ax = plt.subplots()
+            ax.plot(forecast['ds'],forecast['yhat'])
+            
+            ax.set_xlabel('Date')
+            ax.set_ylabel('Forecast')
+            plt.xticks(rotation=45)
+            ax.legend()
+            st.pyplot(fig)
+            
+        
+        if st.button('Show graph of forecast')==True:
+            showgrph()
 if st.session_state['page']=='mum':         
     st.button('Go to home page', on_click=navigate_to, args=['home'])    
