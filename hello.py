@@ -112,9 +112,14 @@ elif st.session_state['page'] == 'mum':
             showgraph()
         
         def showgrph():
-            fig,ax= model.plot(forecast)
-            ax.plot(forecast)
+            fig, ax = plt.subplots()
+            ax.plot(forecast_clean['ds'], forecast_clean['yhat'], label='Forecast')
+            ax.fill_between(forecast_clean['ds'], forecast_clean['yhat_lower'], forecast_clean['yhat_upper'], alpha=0.2)
+            ax.set_xlabel('Date')
+            ax.set_ylabel('Forecast')
+            ax.legend()
             st.pyplot(fig)
+
         
         if st.button('Show graph of forecast')==True:
             showgrph()
