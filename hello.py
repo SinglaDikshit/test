@@ -119,6 +119,7 @@ elif st.session_state['page'] == 'mum':
             ax.plot(dates,forecast)
             ax.set_xlabel('Date')
             ax.set_ylabel('Forecast')
+            plt.xticks(rotation=45)
             ax.legend()
             st.pyplot(fig)
             
